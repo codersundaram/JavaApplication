@@ -8,10 +8,14 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        printNumbers(1,5);
+    }
+    public static String[] printNumbers(int start, int end) {
+        String[] output = new String[end - start + 1];
+        for (int i = start; i <= end; i++) {
+            output[i - start] = "i = " + i;
+            System.out.println(output[i - start]);
         }
+        return output;
     }
 }
