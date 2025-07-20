@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    tools {
+   /*  tools {
         maven 'maven 3.9.11' // Match the name in Jenkins tool config
     }
-
+ */
     stages {
         stage('Checkout') {
             steps {
