@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven 3.8.8' // Match the name in Jenkins tool config
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/codersundaram/JavaApplication.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+       /*  stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Publish Test Results') {
+            steps {
+                junit 'target/surefire-reports *//*.xml'
+            }
+        } */
+    }
+}
